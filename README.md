@@ -1,1 +1,1 @@
-A repository of my Pythno practice files
+A repository of my Python practice files
