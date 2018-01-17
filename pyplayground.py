@@ -684,3 +684,167 @@ c.volume()
 
 c.surface_area()
 
+
+# In[44]:
+
+
+import urllib.request
+lt=[]
+x = '63579'
+st = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='+x
+req = urllib.request.Request(st)
+with urllib.request.urlopen(req) as response:
+    the_page = response.read()
+    lt = the_page.split()
+for count in range(0,500):
+    
+    x = lt[-1].decode("utf-8")
+    st = 'http://www.pythonchallenge.com/pc/def/linkedlist.php?nothing='+x
+    req = urllib.request.Request(st)
+    with urllib.request.urlopen(req) as response:
+       the_page = response.read()
+    
+    print(the_page," count:",count)
+    lt = the_page.split()
+
+
+# In[28]:
+
+
+
+
+
+# In[26]:
+
+
+lt = the_page.split()
+
+
+# In[14]:
+
+
+lt
+
+
+# In[22]:
+
+
+lt[-1].decode("utf-8")
+
+
+# In[1]:
+
+
+import pickle
+
+
+# In[4]:
+
+
+entry=['p','e','a','k']
+with open('entry.pickle', 'wb') as f:
+    
+    pickle.dump(entry, f)
+
+
+# In[5]:
+
+
+f
+
+
+# In[6]:
+
+
+with open('entry.pickle', 'rb') as f:
+    entry = pickle.load(f)
+
+
+# In[7]:
+
+
+entry
+
+
+# In[8]:
+
+
+f
+
+
+# In[11]:
+
+
+import urllib.request
+import pickle
+lt=[]
+st = 'http://www.pythonchallenge.com/pc/def/banner.p'
+req = urllib.request.Request(st)
+with urllib.request.urlopen(req) as response:
+    the_page = response.read()
+data = pickle.loads(the_page)
+
+
+# In[16]:
+
+
+for line in data:
+    print("".join([k * v for k, v in line]))
+
+
+# In[31]:
+
+
+st = 'http://www.pythonchallenge.com/pc/def/channel.jpg'
+req = urllib.request.Request(st)
+with urllib.request.urlopen(req) as response:
+    the_page = response.read()
+data = pickle.loads(the_page)
+
+
+# In[34]:
+
+
+list1="channel"
+list2="<-- zip"
+zipped = list(zip(list1,list2))
+print (zipped)
+unzipped = list(zip(zipped))
+print (unzipped)
+
+
+# In[64]:
+
+
+import zipfile
+zf = zipfile.ZipFile('channel.zip','r')
+
+list1 = "Next nothing is 94191".split()
+x = list1[-1]
+comments=[]
+name = x+".txt"
+comments.append(zf.getinfo(name).comment.decode("utf-8"))
+f = open("channel\\"+name)
+list1 = f.readline().split()
+for count in range(0,950):
+    f.seek(0)
+    print(f.readline())
+    zf.getinfo("90506.txt").comment
+    x = list1[-1]
+    name = x+".txt"
+    comments.append(zf.getinfo(name).comment.decode("utf-8"))
+    f = open("channel\\"+name)
+    list1 = f.readline().split()
+
+
+# In[66]:
+
+
+print("".join(comments))
+
+
+# In[63]:
+
+
+
+
